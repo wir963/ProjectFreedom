@@ -1,0 +1,28 @@
+<div class="subject new">
+	<h2>Add New Course</h2>
+
+	<%= form_for(:course, :url => {:action => 'create'}) do |c| %>
+	
+	<table summary="Subject form fields">
+		<tr>
+			<th>Name</th>
+			<td><%= c.text_field(:name) %></td>
+		</tr>
+		<tr>
+			<th>Professor</th>
+			<td><%= c.text_field(:professors) %></td>
+		</tr>
+		<tr>
+			<th>Number</th>
+			<td><%= c.text_field(:number) %></td>
+		</tr>
+		<tr>
+			<th>Department</th>
+			<td><%= c.text_field(:department) %></td>
+		</tr>
+	</table>
+	<%= submit_tag("Submit New Course") %>
+	
+	<% end %>
+	
+</div>

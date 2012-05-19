@@ -1,0 +1,16 @@
+<h1>
+<%= @professor.first_name + " " + @professor.last_name %>
+</h1>
+<p> Overall Rating: 
+<%= @professor.overall_rating %>
+</p>
+<table>
+	<tr>
+		<th>Courses Taught</th>
+	</tr>
+<% @professor.courses.each do |course|%>
+	<tr>
+		<td><%= course.name %></td>
+	</tr>
+<% end %>
+</table>

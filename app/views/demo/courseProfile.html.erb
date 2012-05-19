@@ -1,0 +1,26 @@
+<h1>
+<% course = Course.find(@id) %>
+<%= course.name%>
+</h1>
+<p> Best Professor for this course : 
+<%= course.best_professor %>
+</p>
+
+<p> Professors who teach this course
+
+<table>
+	<tr>
+		<th>First Name</th>
+		<th> Last Name</th>
+		<th> Rating for this course</th>
+	</tr>
+<% CourseEvaluation.where(:course_id => @id).each do |c|%>
+
+	<tr>
+		<td><%= c.professor.first_name %></td>
+		<td><%= c.professor.last_name %></td>
+		<td><%= c.overall_cross_rating %></td>
+	</tr>
+<% end %>
+</table>
+</p>

@@ -1,0 +1,17 @@
+<h1>Individual Evaluations</h1>
+
+<table class="listing">
+	<tr class="header">
+		<th>User Name</th>
+		<th>Rating</th>
+		<th>Show More</th>
+	</tr>
+
+<% @ind_eval.each do |e|%>
+	<tr>
+		<td><%= e.user_name %></td>
+		<td><%= e.rating %></td>
+		<td><%= link_to("Show", {:action=> 'show', :id =>e.id}, :class => 'action show')%></td>
+	</tr>
+	<% end %>
+</table>

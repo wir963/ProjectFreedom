@@ -1,0 +1,25 @@
+<h1>
+<%= @course.name%>
+</h1>
+<p> Best Professor for this course : 
+	<% #@course.best_professor %>
+</p>
+
+<div> Professors who teach this course
+
+<table>
+	<tr>
+		<th>User Name</th>
+		<th>Course</th>
+		<th>Professor</th>
+		<th>Rating</th>
+	</tr>
+<% @course.professors.each do |c|%>
+
+	<tr>
+		<td><%= c.first_name %></td>
+		<td><%= c.last_name %></td>
+	</tr>
+<% end %>
+</table>
+</div>

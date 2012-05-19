@@ -1,0 +1,21 @@
+<h1>Courses</h1>
+
+<table class="listing">
+	<tr class="header">
+		<th>Name</th>
+		<th>Department</th>
+		<th>Number</th>
+		<th>Credits</th>
+		<th>Show More</th>
+	</tr>
+
+<% @courses.each do |course|%>
+	<tr>
+		<td><%= course.name %></td>
+		<td><%= course.department %></td>
+		<td><%= course.number %></td>
+		<td><%= course.credits %></td>
+		<td><%= link_to("Show", {:action=> 'show', :id =>course.id}, :class => 'action show')%></td>
+	</tr>
+	<% end %>
+</table>

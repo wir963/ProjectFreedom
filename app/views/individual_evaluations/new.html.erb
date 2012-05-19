@@ -1,0 +1,21 @@
+
+<div class="subject new">
+	<h2>Create Subject</h2>
+
+	<%= form_for(:individual_evaluation, :url => {:action => 'create'}) do |f| %>
+	
+	<table summary="Subject form fields">
+		<tr>
+			<th>User Name</th>
+			<td><%= f.text_field(:user_name) %></td>
+		</tr>
+		<tr>
+			<th>Rating</th>
+			<td><%= f.text_field(:rating) %></td>
+		</tr>
+	</table>
+	<%= submit_tag("Submit Evaluation") %>
+	
+	<% end %>
+	
+</div>
