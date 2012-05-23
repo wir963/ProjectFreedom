@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
 */
+h1, .header 
+{
+	font:24;
+}

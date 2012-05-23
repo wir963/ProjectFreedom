@@ -1,0 +1,25 @@
+<h1>
+<%= @course_evaluation.course.name + " " + @course_evaluation.professor.first_name + " " + @course_evaluation.professor.last_name %>
+</h1>
+<div> Individual Reviews
+
+<table>
+	<tr>
+		<th>User Name</th>
+		<th>Rating</th>
+	</tr>
+<% @course_evaluation.individual_evaluations.each do |c|%>
+	<tr>
+		<td><% id1 = c.professor_id.to_i %>
+			<% professor = Professor.find(id1)%>
+			<%= professor.first_name + " " + professor.last_name%>
+			</td>
+
+		<td><% id = c.course_id.to_i %>
+			<% course = Course.find(id)%>
+			<%= course.name %>
+			</td>
+	</tr>
+<% end %>
+</table>
+</div>

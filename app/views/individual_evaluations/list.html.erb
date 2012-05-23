@@ -4,6 +4,8 @@
 	<tr class="header">
 		<th>User Name</th>
 		<th>Rating</th>
+		<th>Professor</th>
+		<th>Course</th>
 		<th>Show More</th>
 	</tr>
 
@@ -11,6 +13,8 @@
 	<tr>
 		<td><%= e.user_name %></td>
 		<td><%= e.rating %></td>
+		<td><%= e.professor %></td>
+		<td><%= e.course %></td>
 		<td><%= link_to("Show", {:action=> 'show', :id =>e.id}, :class => 'action show')%></td>
 	</tr>
 	<% end %>

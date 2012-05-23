@@ -1,0 +1,21 @@
+<div class="subject new">
+	<h2>Add New Course and Professor Combination</h2>
+
+	<%= form_for(:course_evaluation, :url => {:action => 'create'}) do |c| %>
+	
+	<table summary="Subject form fields">
+		<tr>
+			<th>Professor</th>
+			<td><%= c.text_field(:professor_id) %></td>
+		</tr>
+		<tr>
+			<th>Course</th>
+			<td><%= c.text_field(:course_id) %></td>
+		</tr>
+	</table>
+	
+	<%= submit_tag("Submit") %>
+	
+	<% end %>
+	
+</div>
