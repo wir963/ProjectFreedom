@@ -1,11 +1,26 @@
+<style type="text/css">
+#header_table {margin-left: auto; margin-right: auto; border-style: solid; border-width:1px; border-color:gray;}
+#professor_name {vertical-align: bottom;}
+</style>
+
+<table id="header_table">
+<tr><td id="professor_name">
 <h1>
 <% professor = Professor.find(@id) %>
-<%= professor.first_name + " " + professor.last_name %>
+<%= professor.first_name%>
+<p style="margin-top: 0px"><!--print last name on new line-->
+<%= " " + professor.last_name%>
+</p>
 </h1>
+</td>
+
+<td id="courses_taught">
 <p> Overall Rating: 
 <%= professor.overall_rating %>
 </p>
-<table>
+</td></tr></table> <!--header_table-->
+
+<table id="courses_taught">
 	<tr>
 		<th>Courses Taught</th>
 	</tr>
@@ -14,4 +29,4 @@
 		<td><%= course.name %></td>
 	</tr>
 <% end %>
-</table>
+</table><!--courses_taught-->
