@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # encoding: UTF-8
+=======
+>>>>>>> 2ef36c589d4e1fc301d2570921c8de44fc111e8c
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,6 +14,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120524220610) do
 
   create_table "admin_users", :force => true do |t|
@@ -20,6 +24,9 @@ ActiveRecord::Schema.define(:version => 20120524220610) do
     t.datetime "updated_at",                    :null => false
     t.string   "salt",            :limit => 40
   end
+=======
+ActiveRecord::Schema.define(:version => 20120516230144) do
+>>>>>>> 2ef36c589d4e1fc301d2570921c8de44fc111e8c
 
   create_table "course_evaluations", :force => true do |t|
     t.integer  "professor_id"

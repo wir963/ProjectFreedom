@@ -1,11 +1,36 @@
-<h1>
+<style type="text/css">
+#header_table {margin-left: auto; margin-right: auto; border-style: solid; border-width:1px; height: 300px;}
+#professor_name {vertical-align: bottom;}
+#post_it {background-image: url(../app/assets/images/post-it.png);  padding-left:200px; padding-right:200px; padding-bottom:300px;}
+#headshot {width: 51%;}
+#overall_rating {text-align: center;}
+body {background: url(http://subtlepatterns.com/patterns/purty_wood.png);}
+</style>
+
+<table id="header_table">
 <% professor = Professor.find(@id) %>
-<%= professor.first_name + " " + professor.last_name %>
-</h1>
+<tr>
+<td id="overall_rating">
+<img src="http://insuremyfec.com/wp-content/uploads/2011/12/generic-headshot-male.jpg" id="headshot">
 <p> Overall Rating: 
 <%= professor.overall_rating %>
 </p>
-<table>
+</td>
+
+<td id="post_it">
+<div id="professor_name">
+<h1>
+<%= professor.first_name%>
+<p style="margin-top: 0px"><!--print last name on new line-->
+<%= " " + professor.last_name%>
+</p>
+</h1>
+</div>
+</td>
+</tr></table> <!--header_table-->
+
+
+<table id="courses_taught">
 	<tr>
 		<th>Courses Taught</th>
 	</tr>
@@ -14,4 +39,6 @@
 		<td><%= course.name %></td>
 	</tr>
 <% end %>
-</table>
+</table><!--courses_taught-->
+
+<%= image_tag('rails.png')%>
