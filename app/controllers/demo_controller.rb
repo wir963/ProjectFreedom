@@ -1,5 +1,7 @@
 class DemoController < ApplicationController
     
+    before_filter :confirm_logged_in
+    
     def index
         #render('hello')
         #redirect_to(:action => 'other_hello')

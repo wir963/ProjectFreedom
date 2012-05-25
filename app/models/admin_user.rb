@@ -18,11 +18,11 @@ class AdminUser < ActiveRecord::Base
   end
   
   def password_match?(password="")
-    hashed_password == AdminUser.hash_with_salt(password, username)
+    hashed_password == AdminUser.hash_with_salt(password, salt)
   end
   
-  def self.make_salt(username="")
-    Digest::SHA1.hexdigest("Use #{username} with #{Time.now} to make salt")
+  def self.make_salt(user_name="")
+    Digest::SHA1.hexdigest("Use #{user_name} with #{Time.now} to make salt")
   end
   
   def self.hash_with_salt(password="", salt="")
@@ -35,7 +35,7 @@ class AdminUser < ActiveRecord::Base
     # Whenever :password has a value hashing is needed
     unless password.blank?
       # always use "self" when assigning values
-      self.salt = AdminUser.make_salt(username) if salt.blank?
+      self.salt = AdminUser.make_salt(user_name) if salt.blank?
       self.hashed_password = AdminUser.hash_with_salt(password, salt)
     end
   end

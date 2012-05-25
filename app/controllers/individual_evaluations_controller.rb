@@ -1,5 +1,7 @@
 class IndividualEvaluationsController < ApplicationController
 
+  before_filter :confirm_logged_in
+  
   def list
     @ind_eval = IndividualEvaluation.all
   end

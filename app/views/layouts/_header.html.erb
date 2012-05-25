@@ -1,2 +1,8 @@
 <%= link_to("Professors", {:controller => "professors", :action=> "list"}) %>
 <%= link_to("Courses", {:controller => "courses", :action => "list"})%>
+<% if !flash[:notice].blank?%>
+	<div class="notice">
+		<%= flash[:notice]%>
+	</div>
+<% end %>
+		

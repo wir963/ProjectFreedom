@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
   
+  before_filter :confirm_logged_in
+  
   def list
     @courses = Course.all
   end
