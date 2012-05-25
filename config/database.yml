@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: simple_cms1_development
   pool: 5
-  username: simple_cms1
+  username: simple_cms1   
   password: Washingt0n
   socket: /tmp/mysql.sock
 
