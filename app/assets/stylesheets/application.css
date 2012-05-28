@@ -11,7 +11,23 @@
  *= require_self
  *= require_tree .
 */
-h1, .header 
-{
+h1, .header {
 	font:24;
+}
+
+.button {
+	
+}
+
+.nav {
+	width:100px;
+	height:15px;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0 0 .5em 0;
 }

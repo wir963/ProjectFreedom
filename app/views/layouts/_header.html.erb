@@ -1,5 +1,9 @@
-<%= link_to("Professors", {:controller => "professors", :action=> "list"}) %>
-<%= link_to("Courses", {:controller => "courses", :action => "list"})%>
+<div class="nav">
+<%= button_to"Professors", {:controller => "professors", :action=> "list"} %>
+<%= button_to"Courses", {:controller => "courses", :action => "list"}%>
+<%= button_to "Logout", {:controller => "access", :action => 'logout'}%>
+</div>
+<div>Logged in as: <%= session[:user_name]%></div>
 <% if !flash[:notice].blank?%>
 	<div class="notice">
 		<%= flash[:notice]%>
