@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <style type="text/css">
 #gray_bar {margin-left: 0; margin-bottom: 85px; background-image:url(<%= asset_path 'gray_bar.png'%>); height: 56px;}
 #header_links {position: absolute; top: 13px; left:0px;}
@@ -34,6 +35,14 @@ body {margin-top:0; margin-left:0; background-image: url(<%= asset_path 'purty_w
 
 
 
+=======
+<div class="nav">
+<%= button_to"Professors", {:controller => "professors", :action=> "list"} %>
+<%= button_to"Courses", {:controller => "courses", :action => "list"}%>
+<%= button_to "Logout", {:controller => "access", :action => 'logout'}%>
+</div>
+<div>Logged in as: <%= session[:user_name]%></div>
+>>>>>>> df1e5905060c7c82a609d1c15bc5f688a34c12dc
 <% if !flash[:notice].blank?%>
 	<div class="notice">
 		<%= flash[:notice]%>

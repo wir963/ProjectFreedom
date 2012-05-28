@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 <%= render(:partial=>"layouts/header") %>
+=======
+<h1 class="header">Georgetown Course Reviews</h1>
+<% if session[:user_id] %>
+<%= render(:partial=>'layouts/header')%>
+<% else %>
+<% end %>
+>>>>>>> df1e5905060c7c82a609d1c15bc5f688a34c12dc
 <%= yield %>
 </body>
 </html>
