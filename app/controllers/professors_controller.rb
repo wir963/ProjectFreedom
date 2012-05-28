@@ -1,5 +1,6 @@
 class ProfessorsController < ApplicationController
 
+
   before_filter :confirm_logged_in
 
   def list
