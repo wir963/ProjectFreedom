@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <style type="text/css">
 #gray_bar {margin-left: 0; margin-bottom: 85px; background-image:url(<%= asset_path 'gray_bar.png'%>); height: 56px;}
 #header_links {position: absolute; top: 13px; left:0px;}
@@ -7,12 +7,13 @@
 #header_links li a:hover {font-size:17px;}
 #header_menu {margin:0; list-style:none;}
 #header_tab {position:absolute; left:400px; background-position:0px -5px; z-index:5000;}
-#header_tab a {background:url(<%= asset_path 'top-flag.png'%>); width:150px; height:123px; display:block; background-position:0px -8px; text-indent:-99999px; -webkit-transition: .1s ease-in;}
+#header_tab a {background:url(<%= asset_path 'top-flag.png'%>); width:150px; height:123px; display:block; background-position:0px -8px; text-indent:-99999px; -webkit-transition: .1s ease-in; -moz-transition: 0.10s ease-in;}
 #header_tab a:hover {background-position:0px 0px; height:131px;}
 #alignment {width:950px; margin:auto; position:relative;}
 #welcome {width:200px; margin:0; padding:0; position:absolute; top:0px; left:700px;}
-#welcome p {display: block; border-bottom:none; font-family: 'Terminal Dosis', sans-serif; text-transform: uppercase; font-size: 12px; color: white; margin-right:20px; line-height: 34px; text-decoration:none;}
+#welcome p {display: block; border-bottom:none; font-family: 'Terminal Dosis', sans-serif; text-transform: uppercase; font-size: 12px; color: white; margin-right:20px; line-height: 0px; text-decoration:none;}
 body {margin-top:0; margin-left:0; background-image: url(<%= asset_path 'purty_wood.png'%> );}
+#logout_button {padding-left:38px}
 </style>
 
 
@@ -28,21 +29,13 @@ body {margin-top:0; margin-left:0; background-image: url(<%= asset_path 'purty_w
 		</ul>
 	</div>
 	<div id="welcome">
-		<p>Welcome, user!</p>
+		<p>Welcome, <%= session[:user_name]%>!</p>
+		<div id="logout_button"><%= button_to "Logout", {:controller => "access", :action => 'logout'}%></div>
 	</div>
 	</div>
 </div>
 
 
-
-=======
-<div class="nav">
-<%= button_to"Professors", {:controller => "professors", :action=> "list"} %>
-<%= button_to"Courses", {:controller => "courses", :action => "list"}%>
-<%= button_to "Logout", {:controller => "access", :action => 'logout'}%>
-</div>
-<div>Logged in as: <%= session[:user_name]%></div>
->>>>>>> df1e5905060c7c82a609d1c15bc5f688a34c12dc
 <% if !flash[:notice].blank?%>
 	<div class="notice">
 		<%= flash[:notice]%>
