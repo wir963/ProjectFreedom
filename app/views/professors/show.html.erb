@@ -1,32 +1,35 @@
 <style type="text/css">
-#header_table {margin-left: auto; margin-right: auto; border-style: solid; border-width:1px; height: 300px;}
+#header_table {margin-left: auto; margin-right: auto; height: 300px; width: 900;}
 #professor_name {vertical-align: bottom;}
-#post_it {background-image: url(../app/assets/images/post-it.png);  padding-left:200px; padding-right:200px; padding-bottom:300px;}
-#headshot {width: 51%;}
-#overall_rating {text-align: center;}
+#post_it {padding-bottom: 150px; position:absolute; left: 550px; z-index:200;}
+#post_it h1 {position:relative; bottom: 239px; left: 100px;}
+#headshot {position:absolute; left: 350px; top: 250px; z-index:100;}
+#overall_rating {position:absolute; left: 824px; top: 175px; z-index:100;}
 </style>
 
 <table id="header_table">
 
 <tr>
-<td id="overall_rating">
-<img src="http://insuremyfec.com/wp-content/uploads/2011/12/generic-headshot-male.jpg" id="headshot">
-<p> Overall Rating: 
-<%= @professor.overall_rating %>
-</p>
+<td id="headshot">
+<%= image_tag('headshot.jpeg' ) %>
 </td>
 
 <td id="post_it">
-<div id="professor_name">
+<%= image_tag('post-it.png', :size=>"350x357") %>
 <h1>
 <%= @professor.first_name%>
-<p style="margin-top: 0px"><!--print last name on new line-->
+<br /><!--print last name on new line-->
 <%= " " + @professor.last_name%>
-</p>
 </h1>
-</div>
 </td>
+
+
+<td id="overall_rating">
+<%= image_tag('block_red_r.png') %>
+</td>
+
 </tr></table> <!--header_table-->
+
 
 
 <table id="courses_taught">
@@ -40,5 +43,13 @@
 <% end %>
 </table><!--courses_taught-->
 
+
+<!--
+
 <%= image_tag('rails.png')%>
 
+<%= @professor.overall_rating %>
+
+
+
+-->
