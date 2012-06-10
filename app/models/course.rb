@@ -4,6 +4,16 @@ class Course < ActiveRecord::Base
     has_many :professors, :through => :course_evaluations
     has_many :courses, :through => :course_evaluations
     
+    validates_presence_of :name
+    validates_length_of :name, :maximum=>140 
+    
+    validates_presence_of :number
+    validates_numericality_of :number
+    validates_length_of :number, :is=>3
+    
+    validates_presence_of :department 
+    validates_length_of :department, :is=>4
+    
     def best_professor
         best_prof = course.professors.first
         course.professors.each do |c|
