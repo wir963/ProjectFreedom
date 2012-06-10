@@ -35,10 +35,12 @@
 <table id="courses_taught">
 	<tr>
 		<th>Courses Taught</th>
+		<th>Review</th>
 	</tr>
 <% @professor.courses.each do |course|%>
 	<tr>
 		<td><%= course.name %></td>
+		<td><%= link_to("Review", )%>
 	</tr>
 <% end %>
 </table><!--courses_taught-->
