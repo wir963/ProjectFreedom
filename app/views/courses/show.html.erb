@@ -9,17 +9,16 @@
 
 <table>
 	<tr>
-		<th>User Name</th>
-		<th>Course</th>
 		<th>Professor</th>
 		<th>Rating</th>
+		<th>Submit Review</th>
 	</tr>
 <% @course.professors.each do |c|%>
 
 	<tr>
-		<td><%= c.first_name %></td>
-		<td><%= c.last_name %></td>
-	</tr>
+		<td><%= c.first_name + " " + c.last_name %></td>
+		<td><%= course_evaluation.where(course_evaluation.course_id = @course.id AND course_evaluation.professor_id = c.id)%></td>
+	</tr>%>
 <% end %>
 </table>
 </div>
