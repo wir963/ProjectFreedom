@@ -2,7 +2,7 @@
 <%= @course.name%>
 </h1>
 <p> Best Professor for this course : 
-	<% #@course.best_professor %>
+	<%#@course.best_professor %>
 </p>
 
 <div> Professors who teach this course
@@ -14,10 +14,10 @@
 		<th>Submit Review</th>
 	</tr>
 <% @course.professors.each do |c|%>
-
 	<tr>
 		<td><%= c.first_name + " " + c.last_name %></td>
-		<td><%= course_evaluation.where(course_evaluation.course_id = @course.id AND course_evaluation.professor_id = c.id)%></td>
+		<td><%= 4.3%></td>
+		<td><%= link_to("Review", @course.course_evaluations.find_by_professor_id(c))%>
 	</tr>%>
 <% end %>
 </table>

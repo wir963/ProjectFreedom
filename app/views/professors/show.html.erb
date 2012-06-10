@@ -40,18 +40,12 @@
 <% @professor.courses.each do |course|%>
 	<tr>
 		<td><%= course.name %></td>
-		<td><%= link_to("Review", )%>
+		<td><%= link_to("Review", @professor.course_evaluations.find_by_course_id(course))%></td>
 	</tr>
 <% end %>
-</table><!--courses_taught-->
+</table>
 
-
-<!--
 
 <%= image_tag('rails.png')%>
 
 <%= @professor.overall_rating %>
-
-
-
--->

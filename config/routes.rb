@@ -4,6 +4,8 @@ Projectfreedom::Application.routes.draw do
     
     match 'admin', :to => 'access#menu'
     
+    resources :course_evaluations
+    
     # get "demo/index"
 
   # The priority is based upon order of creation:
