@@ -3,6 +3,7 @@ class CourseEvaluation < ActiveRecord::Base
     belongs_to :professor
     belongs_to :course 
     has_many :individual_evaluations
+    accepts_nested_attributes_for :individual_evaluations
     
     def overall_cross_rating
       individual_evaluations.each do |i|

@@ -1,8 +1,9 @@
-
 <div class="subject new">
 	<h2>Create Subject</h2>
+	
+	<%= link_to ("Back to Course Evaluations", {action => 'list', :course_evaluation_id => @course_evaluation.id}, :class => 'back-link') %>
 
-	<%= form_for(:individual_evaluation, :url => {:action => 'create'}) do |f| %>
+	<%= form_for(:individual_evaluation, :url => {:action => 'create', :id => @ind_eval.id, :course_evaluation_id => @course_evaluation.id}) do |f| %>
 	
 	<table summary="Subject form fields">
 		<tr>
@@ -14,8 +15,12 @@
 			<td><%= f.text_field(:rating) %></td>
 		</tr>
 		<tr>
-			<th>Course and Professor Combo</th>
-			<td><%= f.text_field(:course_evaluation_id) %></td>
+			<th>Course</th>
+			<td><%= f.select(:course_id, 1..9) %></td>
+		</tr>
+		<tr>
+			<th>Professor</th>
+			<td><%= f.select(:professor_id, 1..9) %></td>
 		</tr>
 	</table>
 	<%= submit_tag("Submit Evaluation") %>

@@ -18,6 +18,7 @@
 			<% course = Course.find(id)%>
 			<%= course.name %>
 		</td>
+		<td><%= link_to("View Individual Evaluations", {:controller => 'individual_evaluations', :action => 'list', :course_evaluation_id => c.id}, :class => 'action show') %>
 		<td><%= link_to("Show", {:action=> 'show', :id =>c.id}, :class => 'action show')%></td>
 		<td><%= link_to("Delete", {:action=> 'delete', :id =>c.id}, :class => 'action delete')%></td>
 	</tr>

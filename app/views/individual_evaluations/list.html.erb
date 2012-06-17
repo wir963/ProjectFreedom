@@ -1,4 +1,8 @@
+<%= link_to( "Back to Course Evaluations List", {:controller => 'course_evaluations', :action => 'list', :course_evaluation_id => @course_evaluation.id}, :class => 'back-link')%>
+
 <h1>Individual Evaluations</h1>
+
+<%= link_to("Add your evaluation", {:action => 'new'}, :class => 'action new')%>
 
 <table class="listing">
 	<tr class="header">

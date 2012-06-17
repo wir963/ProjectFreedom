@@ -1,7 +1,8 @@
 <div class="subject new">
+	<%= link_to(" << Back to List", {:action => 'list'})%>
 	<h2>Add New Course and Professor Combination</h2>
 
-	<%= form_for(:course_evaluation, :url => {:action => 'create'}) do |c| %>
+	<%= form_for(:course_evaluation, :url => {:action => 'create', :id => @course_evaluation.id}) do |c| %>
 	
 	<table summary="Subject form fields">
 		<tr>

@@ -1,0 +1,15 @@
+<% form_for @course_evaluations do |f| %>
+<p>
+	<%= f.label :course_id %>
+	<%= f.label :professor_id%>
+</p>
+<% fields_for :individual_evaluations do |builder| %>
+<p>
+	<%= builder.label :rating %>
+	<%= builder.text_area :rating %>
+
+<% end %>
+
+
+	<% f.submit "Submit"%>
+<% end %>

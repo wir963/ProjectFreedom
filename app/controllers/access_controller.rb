@@ -19,7 +19,7 @@ class AccessController < ApplicationController
       session[:user_id] = auth_user.id
       session[:user_name] = auth_user.user_name
       flash[:notice] = "You are now logged in."
-      redirect_to(:action => 'menu')
+      redirect_to('/access/menu')
     else
     flash[:notice] = "Invalid username/password combination"
     redirect_to(:action => 'login')

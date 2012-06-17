@@ -2,6 +2,8 @@
 <%= @course_evaluation.course.name + " " + @course_evaluation.professor.first_name + " " + @course_evaluation.professor.last_name %>
 </h1>
 <div> Individual Reviews
+	
+	<%= link_to("Submit a Review", {:controller => 'individual_evaluations', :action => 'new'})%>
 
 <table>
 	<tr>
@@ -13,12 +15,12 @@
 		<td><% id1 = c.professor_id.to_i %>
 			<% professor = Professor.find(id1)%>
 			<%= professor.first_name + " " + professor.last_name%>
-			</td>
+		</td>
 
 		<td><% id = c.course_id.to_i %>
 			<% course = Course.find(id)%>
 			<%= course.name %>
-			</td>
+		</td>
 	</tr>
 <% end %>
 </table>

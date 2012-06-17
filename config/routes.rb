@@ -1,10 +1,7 @@
 Projectfreedom::Application.routes.draw do
-
-    root :to => "demo#index"
-    
     match 'admin', :to => 'access#menu'
     
-    resources :course_evaluations
+    #resources :course_evaluations
     
     # get "demo/index"
 
